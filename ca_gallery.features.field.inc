@@ -220,9 +220,8 @@ function ca_gallery_field_default_fields() {
       'field_name' => 'field_ca_gallery_parent_gallery',
       'foreign keys' => array(),
       'indexes' => array(
-        'target_entity' => array(
-          0 => 'target_type',
-          1 => 'target_id',
+        'target_id' => array(
+          0 => 'target_id',
         ),
       ),
       'module' => 'entityreference',
@@ -298,9 +297,8 @@ function ca_gallery_field_default_fields() {
       'field_name' => 'field_ca_gallery_image_parent',
       'foreign keys' => array(),
       'indexes' => array(
-        'target_entity' => array(
-          0 => 'target_type',
-          1 => 'target_id',
+        'target_id' => array(
+          0 => 'target_id',
         ),
       ),
       'module' => 'entityreference',
