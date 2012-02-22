@@ -5,3 +5,23 @@
  */
 
 include_once('ca_gallery.features.inc');
+
+/**
+ * Implements hook_form_alter().
+ */
+function ca_gallery_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'context_admin_node_form_wrapper':
+      if ($form['#node']->type == 'ca_gallery') {
+        $pnid = arg(1);
+        $node = node_load($pnid);
+        $title = $node->title;
+        $form['field_ca_gallery_parent_gallery']['und'][0]['target_id']['#default_value'] = $title . ' (' . $pnid . ')';
+      } elseif ($form['#node']->type == 'ca_gallery_image') {
+        $pnid = arg(1);
+        $node = node_load($pnid);
+        $title = $node->title;
+        $form['field_ca_gallery_image_parent']['und'][0]['target_id']['#default_value'] = $title . ' (' . $pnid . ')';
+      }
+  }
+}
