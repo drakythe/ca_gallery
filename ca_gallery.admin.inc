@@ -33,14 +33,14 @@ function ca_gallery_settings_form() {
   );
     $form['ca_gallery_list_count'] = array(
     '#type' => 'textfield',
-    '#title' => t('Number of galleries to display (must be in increments of 4)'),
+    '#title' => t('Number of galleries to display'),
     '#default_value' => variable_get('ca_gallery_list_count', 16),
     '#required' => TRUE,
     '#description' => t('How many blogs would you like displayed per page?'),
   );
   $form['ca_gallery_image_list_count'] = array(
     '#type' => 'textfield',
-    '#title' => t('Number of images to display (must be in increments of 4)'),
+    '#title' => t('Number of images to display'),
     '#default_value' => variable_get('ca_gallery_image_list_count', 16),
     '#required' => TRUE,
     '#description' => t('How many blogs would you like displayed in the block?'),

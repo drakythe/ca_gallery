@@ -116,7 +116,7 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['filters']['field_ca_gallery_parent_gallery_target_id']['operator'] = 'empty';
 
   /* Display: CA Gallery: Gallery List View Template One */
-  $handler = $view->new_display('panel_pane', 'CA Gallery: Gallery List View Template One', 'panel_pane_1');
+  $handler = $view->new_display('panel_pane', 'CA Gallery: Gallery List View Template One', 'ca_gallery_list_1');
   $handler->display->display_options['pane_title'] = 'CA Gallery: Gallery List View Template One';
 
   /* Display: CA Gallery: Gallery Admin */
@@ -1006,7 +1006,7 @@ function ca_gallery_views_default_views() {
   );
 
   /* Display: CA Gallery: Image List View Template One */
-  $handler = $view->new_display('panel_pane', 'CA Gallery: Image List View Template One', 'panel_pane_1');
+  $handler = $view->new_display('panel_pane', 'CA Gallery: Image List View Template One', 'ca_gallery_image_list_1');
   $handler->display->display_options['pane_title'] = 'CA Gallery: Image List View Template One';
 
   /* Display: CA Gallery: Image Admin */
