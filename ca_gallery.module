@@ -30,16 +30,6 @@ function ca_gallery_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_menu()
  */
 function ca_gallery_menu() {
-/**  $items['admin/config/worx_features'] = array(
-    'title' => 'Worx Features',
-    'description' => 'Configure Worx Features',
-    'position' => 'right',
-    'weight' => -20,
-    'page callback' => 'system_admin_menu_block_page',
-    'access arguments' => array('access administration pages'),
-    'file' => 'system.admin.inc',
-    'file path' => drupal_get_path('module', 'system'),
-  );*/
   $items['admin/config/worx_features/gallery'] = array(
     'title' => 'Gallery Configuration',
     'description' => 'Override settings for ca_gallery',
@@ -75,7 +65,7 @@ function ca_gallery_menu_alter(&$items) {
  * Implements hook_panels_pre_render().
  */
 function ca_gallery_panels_pre_render($panel, $renderer) {
-  if (isset($panel->content['3']) && $panel->content['3']->subtype == 'ca_gallery-ca_gallery_list_1') {
+  if (isset($panel->content['new-9']) && $panel->content['new-9']->subtype == 'ca_gallery-ca_gallery_list_1') {
     $panel->title = variable_get('ca_gallery_panel_title', 'Gallery');
   }
 }
