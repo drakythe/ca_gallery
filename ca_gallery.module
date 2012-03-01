@@ -70,3 +70,24 @@ function ca_gallery_menu() {
 function ca_gallery_menu_alter(&$items) {
   $items['gallery']['title'] = variable_get('ca_gallery_menu_title', 'Gallery');
 }
+
+/**
+ * Implements hook_panels_pre_render().
+ */
+function ca_gallery_panels_pre_render($panel, $renderer) {
+  if (isset($panel->content['3']) && $panel->content['3']->subtype == 'ca_gallery-ca_gallery_list_1') {
+    $panel->title = variable_get('ca_gallery_panel_title', 'Gallery');
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function ca_gallery_views_pre_view(&$view, &$display_id, &$args) {
+  if ($display_id == 'ca_gallery_list_1') {
+    $view->set_items_per_page(variable_get('ca_gallery_list_count', 16));
+  }
+  elseif ($display_id == 'ca_gallery_image_list_1') {
+    $view->set_items_per_page(variable_get('ca_gallery_image_list_count', 16));
+  }
+}
