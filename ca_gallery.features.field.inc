@@ -10,129 +10,7 @@
 function ca_gallery_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'comment-comment_node_ca_gallery-comment_body'
-  $fields['comment-comment_node_ca_gallery-comment_body'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(
-        0 => 'comment',
-      ),
-      'field_name' => 'comment_body',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'module' => 'text',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'text_long',
-    ),
-    'field_instance' => array(
-      'bundle' => 'comment_node_ca_gallery',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'comment',
-      'field_name' => 'comment_body',
-      'label' => 'Comment',
-      'required' => TRUE,
-      'settings' => array(
-        'text_processing' => 1,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'module' => 'text',
-        'settings' => array(
-          'rows' => 5,
-        ),
-        'type' => 'text_textarea',
-        'weight' => 0,
-      ),
-    ),
-  );
-
-  // Exported field: 'comment-comment_node_ca_gallery_image-comment_body'
-  $fields['comment-comment_node_ca_gallery_image-comment_body'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(
-        0 => 'comment',
-      ),
-      'field_name' => 'comment_body',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'module' => 'text',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'text_long',
-    ),
-    'field_instance' => array(
-      'bundle' => 'comment_node_ca_gallery_image',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'comment',
-      'field_name' => 'comment_body',
-      'label' => 'Comment',
-      'required' => TRUE,
-      'settings' => array(
-        'text_processing' => 1,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'module' => 'text',
-        'settings' => array(
-          'rows' => 5,
-        ),
-        'type' => 'text_textarea',
-        'weight' => 0,
-      ),
-    ),
-  );
-
-  // Exported field: 'node-ca_gallery-field_ca_gallery_gallery_image'
+  // Exported field: 'node-ca_gallery-field_ca_gallery_gallery_image'.
   $fields['node-ca_gallery-field_ca_gallery_gallery_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -153,6 +31,7 @@ function ca_gallery_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -189,6 +68,7 @@ function ca_gallery_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
+        'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '10 MB',
@@ -210,7 +90,7 @@ function ca_gallery_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-ca_gallery-field_ca_gallery_parent_gallery'
+  // Exported field: 'node-ca_gallery-field_ca_gallery_parent_gallery'.
   $fields['node-ca_gallery-field_ca_gallery_parent_gallery'] = array(
     'field_config' => array(
       'active' => '1',
@@ -231,6 +111,7 @@ function ca_gallery_field_default_fields() {
           0 => 'target_id',
         ),
       ),
+      'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
         'handler' => 'base',
@@ -294,7 +175,7 @@ function ca_gallery_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-ca_gallery_image-field_ca_gallery_image_parent'
+  // Exported field: 'node-ca_gallery_image-field_ca_gallery_image_parent'.
   $fields['node-ca_gallery_image-field_ca_gallery_image_parent'] = array(
     'field_config' => array(
       'active' => '1',
@@ -315,6 +196,7 @@ function ca_gallery_field_default_fields() {
           0 => 'target_id',
         ),
       ),
+      'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
         'handler' => 'base',
@@ -378,7 +260,7 @@ function ca_gallery_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-ca_gallery_image-field_gallery_image_g_image'
+  // Exported field: 'node-ca_gallery_image-field_gallery_image_g_image'.
   $fields['node-ca_gallery_image-field_gallery_image_g_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -399,6 +281,7 @@ function ca_gallery_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -435,6 +318,7 @@ function ca_gallery_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
+        'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '10 MB',
@@ -458,7 +342,6 @@ function ca_gallery_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Comment');
   t('Gallery Image');
   t('Image');
   t('Image Parent Gallery');

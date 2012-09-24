@@ -10,7 +10,7 @@
 function ca_gallery_user_default_roles() {
   $roles = array();
 
-  // Exported role: gallery admin
+  // Exported role: gallery admin.
   $roles['gallery admin'] = array(
     'name' => 'gallery admin',
     'weight' => '3',

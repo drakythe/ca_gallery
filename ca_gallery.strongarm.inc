@@ -14,14 +14,14 @@ function ca_gallery_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_ca_gallery';
-  $strongarm->value = 'edit-menu';
+  $strongarm->value = 'edit-weight-settings';
   $export['additional_settings__active_tab_ca_gallery'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_ca_gallery_image';
-  $strongarm->value = 'edit-menu';
+  $strongarm->value = 'edit-weight-settings';
   $export['additional_settings__active_tab_ca_gallery_image'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -223,6 +223,48 @@ function ca_gallery_strongarm() {
   $strongarm->name = 'save_continue_ca_gallery_image';
   $strongarm->value = 'Save and add fields';
   $export['save_continue_ca_gallery_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_default_ca_gallery';
+  $strongarm->value = '0';
+  $export['weight_default_ca_gallery'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_default_ca_gallery_image';
+  $strongarm->value = '0';
+  $export['weight_default_ca_gallery_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_enabled_ca_gallery';
+  $strongarm->value = '1';
+  $export['weight_enabled_ca_gallery'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_enabled_ca_gallery_image';
+  $strongarm->value = '1';
+  $export['weight_enabled_ca_gallery_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_range_ca_gallery';
+  $strongarm->value = '50';
+  $export['weight_range_ca_gallery'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_range_ca_gallery_image';
+  $strongarm->value = '50';
+  $export['weight_range_ca_gallery_image'] = $strongarm;
 
   return $export;
 }

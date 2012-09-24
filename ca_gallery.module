@@ -14,13 +14,17 @@ function ca_gallery_form_alter(&$form, &$form_state, $form_id) {
     case 'context_admin_node_form_wrapper':
       if ($form['#node']->type == 'ca_gallery') {
         $pnid = arg(1);
-        $node = node_load($pnid);
-        $title = $node->title;
-        $form['field_ca_gallery_parent_gallery']['und'][0]['target_id']['#default_value'] = $title . ' (' . $pnid . ')';
+        if (is_numeric($pnid)) {
+          $node = node_load($pnid);
+          $title = $node->title;
+          $form['field_ca_gallery_parent_gallery']['und'][0]['target_id']['#default_value'] = $title . ' (' . $pnid . ')';
+        }
+        $form['field_ca_gallery_parent_gallery']['#access'] = FALSE;
       } elseif ($form['#node']->type == 'ca_gallery_image') {
         $pnid = arg(1);
         $node = node_load($pnid);
-        $title = $node->title;
+        //Need a better solution to our non-object error than to simply mute the notice. But this works for now.
+        @$title = $node->title;
         $form['field_ca_gallery_image_parent']['und'][0]['target_id']['#default_value'] = $title . ' (' . $pnid . ')';
       }
   }
