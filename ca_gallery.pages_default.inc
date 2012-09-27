@@ -59,7 +59,7 @@ function ca_gallery_default_page_manager_handlers() {
     $pane->pid = 'new-1';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'ca_gallery-panel_pane_4';
+    $pane->subtype = 'ca_gallery-ca_gallery_sub_list_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -416,7 +416,7 @@ function ca_gallery_default_page_manager_pages() {
     $pane->pid = 'new-1';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'ca_gallery-panel_pane_2';
+    $pane->subtype = 'ca_gallery-ca_gallery_admin';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -633,7 +633,7 @@ function ca_gallery_default_page_manager_pages() {
     $pane->pid = 'new-3';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'ca_gallery-panel_pane_5';
+    $pane->subtype = 'ca_gallery-ca_gallery_sub_admin';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -651,7 +651,7 @@ function ca_gallery_default_page_manager_pages() {
     $pane->pid = 'new-4';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'ca_gallery_image-panel_pane_2';
+    $pane->subtype = 'ca_gallery_image-ca_gallery_image_admin';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
