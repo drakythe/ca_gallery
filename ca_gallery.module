@@ -26,6 +26,7 @@ function ca_gallery_form_alter(&$form, &$form_state, $form_id) {
         //Need a better solution to our non-object error than to simply mute the notice. But this works for now.
         @$title = $node->title;
         $form['field_ca_gallery_image_parent']['und'][0]['target_id']['#default_value'] = $title . ' (' . $pnid . ')';
+        $form['field_ca_gallery_image_parent']['#access'] = FALSE;
       }
   }
 }
