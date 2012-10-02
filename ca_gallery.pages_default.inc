@@ -246,10 +246,12 @@ function ca_gallery_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'context_admin_options' => 'node_create_menu',
+    'context_admin_options' => 'entityref_create_node:ca_gallery_image:field_ca_gallery_image_parent',
     'context_admin_options_items' => 'ca_gallery_image',
     'context_admin_use_node_edit' => 0,
-    'submitted_context' => 'empty',
+    'submitted_context' => 'argument_entity_id:node_1',
+    'context_admin_field' => 'field_ca_gallery_image_parent',
+    'context_admin_custom_redirect' => '',
   );
   $page->default_handlers[$handler->name] = $handler;
   $pages['ca_gallery_add_image'] = $page;
@@ -330,10 +332,12 @@ function ca_gallery_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'context_admin_options' => 'node_create_menu',
+    'context_admin_options' => 'entityref_create_node:ca_gallery:field_ca_gallery_parent_gallery',
     'context_admin_options_items' => 'ca_gallery',
     'context_admin_use_node_edit' => 0,
-    'submitted_context' => 'empty',
+    'submitted_context' => 'argument_entity_id:node_1',
+    'context_admin_field' => 'field_ca_gallery_parent_gallery',
+    'context_admin_custom_redirect' => '',
   );
   $page->default_handlers[$handler->name] = $handler;
   $pages['ca_gallery_add_sub_gallery'] = $page;
