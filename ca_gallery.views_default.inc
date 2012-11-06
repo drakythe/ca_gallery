@@ -292,6 +292,11 @@ function ca_gallery_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'ca_gallery' => 'ca_gallery',
   );
+  /* Filter criterion: Content: Parent Gallery (field_ca_gallery_parent_gallery) */
+  $handler->display->display_options['filters']['field_ca_gallery_parent_gallery_target_id']['id'] = 'field_ca_gallery_parent_gallery_target_id';
+  $handler->display->display_options['filters']['field_ca_gallery_parent_gallery_target_id']['table'] = 'field_data_field_ca_gallery_parent_gallery';
+  $handler->display->display_options['filters']['field_ca_gallery_parent_gallery_target_id']['field'] = 'field_ca_gallery_parent_gallery_target_id';
+  $handler->display->display_options['filters']['field_ca_gallery_parent_gallery_target_id']['operator'] = 'empty';
   $handler->display->display_options['pane_title'] = 'CA Gallery: Gallery Admin';
   $handler->display->display_options['inherit_panels_path'] = '1';
 
