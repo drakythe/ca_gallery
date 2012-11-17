@@ -4,31 +4,7 @@
  * Code for the CA Gallery feature.
  */
 
-include_once('ca_gallery.features.inc');
-
-/**
- * Implements hook_form_alter().
- */
-function ca_gallery_form_alter(&$form, &$form_state, $form_id) {
-  switch ($form_id) {
-    case 'context_admin_node_form_wrapper':
-      if ($form['#node']->type == 'ca_gallery') {
-        $pnid = arg(1);
-        if (is_numeric($pnid)) {
-          $node = node_load($pnid);
-          $title = $node->title;
-          $form['field_ca_gallery_parent_gallery']['und'][0]['target_id']['#default_value'] = $title . ' (' . $pnid . ')';
-        }
-        $form['field_ca_gallery_parent_gallery']['#access'] = FALSE;
-      } elseif ($form['#node']->type == 'ca_gallery_image') {
-        $pnid = arg(1);
-        $node = node_load($pnid);
-        //Need a better solution to our non-object error than to simply mute the notice. But this works for now.
-        @$title = $node->title;
-        $form['field_ca_gallery_image_parent']['und'][0]['target_id']['#default_value'] = $title . ' (' . $pnid . ')';
-      }
-  }
-}
+include_once 'ca_gallery.features.inc';
 
 /**
  * Implements hook_menu()
@@ -62,14 +38,14 @@ function ca_gallery_menu() {
  * implements hook_menu_alter().
  */
 function ca_gallery_menu_alter(&$items) {
-  $items['gallery']['title'] = variable_get('ca_gallery_menu_title', 'Gallery');
+  $items['event']['title'] = variable_get('ca_gallery_menu_title', 'Gallery');
 }
 
 /**
  * Implements hook_panels_pre_render().
  */
 function ca_gallery_panels_pre_render($panel, $renderer) {
-  if (isset($panel->content['new-9']) && $panel->content['new-9']->subtype == 'ca_gallery-ca_gallery_list_1') {
+  if (isset($panel->content['new-6']) && $panel->content['new-6']->subtype == 'ca_event-ca_event_list_1') {
     $panel->title = variable_get('ca_gallery_panel_title', 'Gallery');
   }
 }
@@ -78,10 +54,19 @@ function ca_gallery_panels_pre_render($panel, $renderer) {
  * Implements hook_views_pre_render().
  */
 function ca_gallery_views_pre_view(&$view, &$display_id, &$args) {
-  if ($display_id == 'ca_gallery_list_1') {
-    $view->set_items_per_page(variable_get('ca_gallery_list_count', 16));
+  if ($display_id == 'ca_event_list_1') {
+    $view->set_items_per_page(variable_get('ca_gallery_list_count', 5));
   }
-  elseif ($display_id == 'ca_gallery_image_list_1') {
-    $view->set_items_per_page(variable_get('ca_gallery_image_list_count', 16));
+  elseif ($display_id == 'ca_event_block_1') {
+    $view->set_items_per_page(variable_get('ca_gallery_block_count', 1));
+  }
+}
+
+/**
+* Implementation of hook_ctools_plugin_directory()
+*/
+function ca_gallery_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools') {
+    return 'plugins/' . $plugin_type;;
   }
 }

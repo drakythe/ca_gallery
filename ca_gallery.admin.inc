@@ -1,22 +1,29 @@
 <?php
 
-/** 
+/**
  * @file
- * CA_Gallery admin system, which overrides the default feature settings.
- * 
+ * CA_Service admin system, which overrides the default feature settings.
+ *
  * Will allow us to make visual changes to the feature without overriding the
  * actual feature.
  */
 
 /**
- * Defines the menu for overriding news feature settings.
- * 
+ * Defines the menu for overriding gallery feature settings.
+ *
  * @return
  *   Fully formed Form API array.
  */
 function ca_gallery_settings_form() {
   $form = array();
-  
+
+  $form['ca_gallery_panel_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title'),
+    '#default_value' => variable_get('ca_gallery_panel_title', 'Gallery'),
+    '#required' => TRUE,
+    '#description' => t('What would you like the panel title to be?'),
+  );
   $form['ca_gallery_menu_title'] = array(
     '#type' => 'textfield',
     '#title' => t('Menu Title'),
@@ -24,27 +31,69 @@ function ca_gallery_settings_form() {
     '#required' => TRUE,
     '#description' => t('What would you like the menu title to be?'),
   );
-  $form['ca_gallery_panel_title'] = array(
+  $form['ca_gallery_list_count'] = array(
     '#type' => 'textfield',
-    '#title' => t('Panel Title'),
-    '#default_value' => variable_get('ca_gallery_panel_title', 'Gallery'),
+    '#title' => t('Galleries per page'),
+    '#default_value' => variable_get('ca_gallery_list_count', 5),
     '#required' => TRUE,
-    '#description' => t('What would you like the panel title to be?'),
+    '#description' => t('How many gallerys would you like displayed per page?'),
   );
-    $form['ca_gallery_list_count'] = array(
+  $form['ca_gallery_block_count'] = array(
     '#type' => 'textfield',
-    '#title' => t('Number of galleries to display'),
-    '#default_value' => variable_get('ca_gallery_list_count', 16),
+    '#title' => t('Galleries in the block'),
+    '#default_value' => variable_get('ca_gallery_block_count', 1),
     '#required' => TRUE,
-    '#description' => t('How many blogs would you like displayed per page?'),
+    '#description' => t('How many gallerys would you like displayed in the block?'),
   );
-  $form['ca_gallery_image_list_count'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Number of images to display'),
-    '#default_value' => variable_get('ca_gallery_image_list_count', 16),
+  $form['ca_gallery_list_template'] = array(
+    '#type' => 'select',
+    '#title' => t('Gallery\'s list template'),
+    '#options' => array(
+      'ca_gallery_list_template_one' => t('Template one'),
+      'ca_gallery_list_template_two' => t('Template two'),
+      'ca_gallery_list_template_three' => t('Template three'),
+    ),
     '#required' => TRUE,
-    '#description' => t('How many blogs would you like displayed in the block?'),
+    '#default_value' => variable_get('ca_gallery_list_template', 'ca_gallery_list_template_one'),
   );
-  
-  return system_settings_form($form);
+  $form['ca_gallery_node_template'] = array(
+    '#type' => 'select',
+    '#title' => t('Gallery\'s node template'),
+    '#options' => array(
+      'ca_gallery_node_template_one' => t('Template one'),
+      'ca_gallery_node_template_two' => t('Template two'),
+      'ca_gallery_node_template_three' => t('Template three'),
+    ),
+    '#required' => TRUE,
+    '#default_value' => variable_get('ca_gallery_node_template', 'ca_gallery_node_template_one'),
+  );
+  $form['actions'] = array(
+    '#type' => 'actions',
+  );
+  $form['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save configuration'),
+  );
+
+  // We are adding the system_settings_form_submit manually instead of
+  // returning system_settings_form($form) in our return statement.
+  // This allows for us to add our submit handler after the
+  // system_settings_form_submit. hook_form_alter could not handle this for us.
+  $form['#submit'][] = 'system_settings_form_submit';
+  $form['#submit'][] = 'ca_gallery_settings_form_submit';
+
+  return $form;
+}
+
+/**
+ * Handles form submission data from 'ca_gallery_settings_form'.
+ *
+ * Determines if we should rebuild the menu router based on form data.
+ */
+function ca_gallery_settings_form_submit($form, &$form_state) {
+  $old_title = $form['ca_gallery_menu_title']['#default_value'];
+  $new_title = $form_state['values']['ca_gallery_menu_title'];
+  if ($old_title != $new_title) {
+    menu_rebuild();
+  }
 }
