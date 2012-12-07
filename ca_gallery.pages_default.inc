@@ -345,7 +345,7 @@ function ca_gallery_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'CA Gallery: Gallery Administration';
   $page->admin_description = '';
-  $page->path = 'gallery/admin/administration';
+  $page->path = 'gallery/admin/gallery-administration';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -545,7 +545,7 @@ function ca_gallery_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'CA Gallery: Image Admin';
   $page->admin_description = '';
-  $page->path = 'node/%node/admin/administration';
+  $page->path = 'node/%node/admin/gallery-administration';
   $page->access = array(
     'plugins' => array(
       0 => array(
