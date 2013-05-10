@@ -280,5 +280,25 @@ function ca_gallery_strongarm() {
   $strongarm->value = '50';
   $export['weight_range_ca_gallery_image'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_ca_gallery';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.6',
+  );
+  $export['xmlsitemap_settings_node_ca_gallery'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_ca_gallery_image';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.7',
+  );
+  $export['xmlsitemap_settings_node_ca_gallery_image'] = $strongarm;
+
   return $export;
 }
