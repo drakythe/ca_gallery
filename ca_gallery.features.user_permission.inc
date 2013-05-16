@@ -14,7 +14,7 @@ function ca_gallery_user_default_permissions() {
   $permissions['create ca_gallery content'] = array(
     'name' => 'create ca_gallery content',
     'roles' => array(
-      'administrator => 'administrator',
+      'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
       'webmaster' => 'webmaster'
     ),
@@ -25,7 +25,7 @@ function ca_gallery_user_default_permissions() {
   $permissions['create ca_gallery_image content'] = array(
     'name' => 'create ca_gallery_image content',
     'roles' => array(
-      'administrator => 'administrator',
+      'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
       'webmaster' => 'webmaster'
     ),
@@ -36,7 +36,7 @@ function ca_gallery_user_default_permissions() {
   $permissions['delete any ca_gallery content'] = array(
     'name' => 'delete any ca_gallery content',
     'roles' => array(
-      'administrator => 'administrator',
+      'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
       'webmaster' => 'webmaster'
     ),
@@ -47,7 +47,7 @@ function ca_gallery_user_default_permissions() {
   $permissions['delete any ca_gallery_image content'] = array(
     'name' => 'delete any ca_gallery_image content',
     'roles' => array(
-      'administrator => 'administrator',
+      'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
       'webmaster' => 'webmaster'
     ),
@@ -58,7 +58,7 @@ function ca_gallery_user_default_permissions() {
   $permissions['delete own ca_gallery content'] = array(
     'name' => 'delete own ca_gallery content',
     'roles' => array(
-      'administrator => 'administrator',
+      'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
       'webmaster' => 'webmaster'
     ),
@@ -69,7 +69,7 @@ function ca_gallery_user_default_permissions() {
   $permissions['delete own ca_gallery_image content'] = array(
     'name' => 'delete own ca_gallery_image content',
     'roles' => array(
-      'administrator => 'administrator',
+      'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
       'webmaster' => 'webmaster'
     ),
@@ -80,7 +80,7 @@ function ca_gallery_user_default_permissions() {
   $permissions['edit any ca_gallery content'] = array(
     'name' => 'edit any ca_gallery content',
     'roles' => array(
-      'administrator => 'administrator',
+      'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
       'webmaster' => 'webmaster'
     ),
@@ -91,7 +91,7 @@ function ca_gallery_user_default_permissions() {
   $permissions['edit any ca_gallery_image content'] = array(
     'name' => 'edit any ca_gallery_image content',
     'roles' => array(
-      'administrator => 'administrator',
+      'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
       'webmaster' => 'webmaster'
     ),
@@ -102,7 +102,7 @@ function ca_gallery_user_default_permissions() {
   $permissions['edit own ca_gallery content'] = array(
     'name' => 'edit own ca_gallery content',
     'roles' => array(
-      'administrator => 'administrator',
+      'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
       'webmaster' => 'webmaster'
     ),
@@ -113,7 +113,7 @@ function ca_gallery_user_default_permissions() {
   $permissions['edit own ca_gallery_image content'] = array(
     'name' => 'edit own ca_gallery_image content',
     'roles' => array(
-      'administrator => 'administrator',
+      'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
       'webmaster' => 'webmaster'
     ),
