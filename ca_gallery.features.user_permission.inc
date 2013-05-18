@@ -16,7 +16,7 @@ function ca_gallery_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
-      'webmaster' => 'webmaster'
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -27,7 +27,7 @@ function ca_gallery_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
-      'webmaster' => 'webmaster'
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -38,7 +38,7 @@ function ca_gallery_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
-      'webmaster' => 'webmaster'
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -49,7 +49,7 @@ function ca_gallery_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
-      'webmaster' => 'webmaster'
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -60,7 +60,7 @@ function ca_gallery_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
-      'webmaster' => 'webmaster'
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -71,7 +71,7 @@ function ca_gallery_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
-      'webmaster' => 'webmaster'
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -82,7 +82,7 @@ function ca_gallery_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
-      'webmaster' => 'webmaster'
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -93,7 +93,7 @@ function ca_gallery_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
-      'webmaster' => 'webmaster'
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -104,7 +104,7 @@ function ca_gallery_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
-      'webmaster' => 'webmaster'
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -115,7 +115,7 @@ function ca_gallery_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'gallery admin' => 'gallery admin',
-      'webmaster' => 'webmaster'
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );

@@ -26,7 +26,7 @@ function ca_gallery_ctools_plugin_api() {
  * Implements hook_views_api().
  */
 function ca_gallery_views_api() {
-  return array("version" => "3.0");
+  return array("api" => "3.0");
 }
 
 /**
@@ -52,4 +52,29 @@ function ca_gallery_node_info() {
     ),
   );
   return $items;
+}
+
+/**
+ * Implements hook_weight_features_default_settings().
+ */
+function ca_gallery_weight_features_default_settings() {
+  $settings = array();
+
+  $settings['ca_gallery'] = array(
+    'enabled' => 1,
+    'range' => 100,
+    'menu_weight' => 0,
+    'default' => 0,
+    'sync_translations' => 0,
+  );
+
+  $settings['ca_gallery_image'] = array(
+    'enabled' => 1,
+    'range' => 100,
+    'menu_weight' => 0,
+    'default' => 0,
+    'sync_translations' => 0,
+  );
+
+  return $settings;
 }
